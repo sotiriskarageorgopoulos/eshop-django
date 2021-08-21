@@ -1,0 +1,203 @@
+:root {
+    /* dark shades of primary color*/
+
+    --clr-primary-1: hsl(28, 20%, 25%);
+    --clr-primary-2: hsl(28, 25%, 30%);
+    --clr-primary-3: hsl(28, 40%, 35%);
+    --clr-primary-4: hsl(28, 45%, 40%);
+
+    /* primary/main color */
+
+    --clr-primary-5: hsl(28, 50%, 60%);
+
+    /* lighter shades of primary color */
+
+    --clr-primary-6: hsl(28, 55%, 50%);
+    --clr-primary-7: hsl(28, 60%, 65%);
+    --clr-primary-8: hsl(28, 65%, 70%);
+    --clr-primary-9: hsl(28, 80%, 75%);
+    --clr-primary-10: hsl(28, 95%, 80%);
+
+    /* darkest grey for headings*/
+
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(209, 28%, 39%);
+
+    /* grey used for paragraphs */
+
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(210, 36%, 96%);
+    --clr-white: #fff;
+    --clr-gold: #c59d5f;
+    --clr-red-dark: hsl(360, 67%, 44%);
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black: #222;
+    --transition: all 0.3s linear;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --small-font-size: 14px;
+    --medium-font-size: 18px;
+    --big-font-size: 30px;
+    --x-big-font-size: 40px;
+    --xx-big-font-size: 60px;
+}
+
+@keyframes change-color {
+    0% {
+        color: var(--clr-grey-9);
+    }
+    25% {
+        color: var(--clr-grey-8)
+    }
+    50% {
+        color: var(--clr-grey-7)
+    }
+    75% {
+        color: var(--clr-grey-6)
+    }
+    100% {
+        color: var(--clr-grey-5);
+    }
+}
+
+.navbar-style {
+    background-color: var(--clr-primary-5);
+    padding: 4%;
+    margin-top: 0 !important;
+}
+
+.free-shipping-text {
+    background-color: var(--clr-primary-1);
+    color: var(--clr-grey-9);
+    margin: 0;
+    padding: 1%;
+    font-size: var(--medium-font-size);
+    font-weight: 700;
+    text-align: right;
+    animation: change-color 5s infinite;
+}
+
+.nav-link,
+#navbarDropdown,
+.navbar-brand {
+    font-size: var(--xx-big-font-size);
+    color: var(--clr-grey-9);
+    font-family: fantasy;
+    font-weight: 500;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.nav-link:hover,
+.navbar-brand:hover { 
+    color: var(--clr-grey-8);
+}
+
+#navbarDropdown {
+    font-size: var(--big-font-size);
+    padding-top: 14%;
+}
+
+.nav-link {
+    font-size: var(--x-big-font-size);
+    padding-top: 17%;
+}
+
+.dropdown-menu {
+    padding: 10%;
+    background-color: var(--clr-primary-4);
+}
+
+.dropdown-item {
+    color: var(--clr-grey-10);
+    font-size: 20px;
+}
+
+.dropdown-item:hover {
+    background-color: var(--clr-primary-5);
+    color: var(--clr-grey-10);
+    border-radius: var(--radius);
+}
+
+footer {
+    background-color: var(--clr-primary-1);
+    color: var(--clr-grey-9);  
+    padding: 4%;
+    font-size: var(--big-font-size);
+}
+
+.footer-category-list {
+    list-style: none;
+}
+
+.footer-comments,
+.footer-faq,
+.footer-category-list a {
+    color: var(--clr-grey-9);
+    text-decoration: none;
+    font-size: var(--medium-font-size);
+}
+
+.footer-comments,
+.footer-faq {
+    font-size: var(--big-font-size);
+    display: flex;
+    justify-content: center;
+}
+
+.footer-comments:hover,
+.footer-faq:hover {
+    color: var(--clr-grey-8);
+}
+
+.footer-copyright {
+    font-size: var(--medium-font-size);
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.footer-social-media a {
+    color: var(--clr-grey-9);
+    font-size: var(--x-big-font-size);
+}
+
+.shopping-cart {
+    background-color: var(--clr-grey-10);
+    color: var(--clr-grey-1);
+    width: 20%;
+    padding: 1%;
+    border: 4px ridge var(--clr-grey-1);
+    z-index: 5;
+    position: absolute;
+    top: 280px;
+    right: 30px;
+}
+
+.shopping-cart-triangle {
+    width: 0;
+    height: 0;
+    z-index: 5;
+    position: absolute;
+    top: 260px;
+    right: 120px;
+    border: 15px solid transparent;
+    border-top: 0;
+    border-bottom: 30px solid var(--clr-grey-1);
+}
+
+.shopping-cart-details {
+    font-size: var(--big-font-size);
+}
