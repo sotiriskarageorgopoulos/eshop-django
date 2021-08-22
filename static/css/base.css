@@ -52,6 +52,10 @@
     --xx-big-font-size: 60px;
 }
 
+body{
+    background-color: var(--clr-grey-10);   
+}
+
 @keyframes change-color {
     0% {
         color: var(--clr-grey-9);
