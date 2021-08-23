@@ -144,6 +144,9 @@ footer {
 
 .footer-category-list {
     list-style: none;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }
 
 .footer-comments,
@@ -156,7 +159,6 @@ footer {
 
 .footer-comments,
 .footer-faq {
-    font-size: var(--big-font-size);
     display: flex;
     justify-content: center;
 }
@@ -203,5 +205,5 @@ footer {
 }
 
 .shopping-cart-details {
-    font-size: var(--big-font-size);
+    font-size: var(--medium-font-size);
 }
