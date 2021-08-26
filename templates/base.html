@@ -20,7 +20,7 @@
     <p class="free-shipping-text">FREE SHIPPING FOR ORDERS OVER &dollar;50</p>
     <nav class="navbar navbar-expand-lg navbar-style">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">E-shop</a>
+            <a class="navbar-brand" href="{% url 'main_page' %}">E-shop</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -51,9 +51,10 @@
             </div>
         </div>
     </nav>
+
     <body>
         <div id="show-shopping-cart">
-           
+
         </div>
         {% block content %}
         {% endblock %}
@@ -76,8 +77,8 @@
                     molestias deserunt. Aliquam consequuntur voluptatem sapiente magnam, cupiditate labore ad, maxime
                     dicta, ab quidem quas.</p>
                 <div class="d-flex justify-content-center">
-                    <a href="" class="footer-faq">FAQ&nbsp;|&nbsp;</a>
-                    <a href="" class="footer-comments">Comments</a>
+                    <a href="{% url 'faq' %}" class="footer-faq">FAQ&nbsp;|&nbsp;</a>
+                    <a href="{% url 'comments' %}" class="footer-comments">Comments</a>
                 </div>
                 <p class="footer-copyright">&copy; Copyright <script>
                         document.write(new Date().getFullYear())
@@ -103,6 +104,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+    integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{% static 'js\base.js' %}"></script>
 {%block extrascripts %}{% endblock %}
+
 </html>

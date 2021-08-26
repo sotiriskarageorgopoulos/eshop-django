@@ -1,0 +1,30 @@
+@import url('./base.css');
+
+#accordion {
+    color: var(--clr-grey-10);
+    background-color: var(--clr-primary-5);
+}
+
+.faq-header {
+    color: var(--clr-primary-5);
+    font-size: var(--xx-big-font-size);
+    display: flex;
+    justify-content: center;
+}
+
+.heading-faq {
+    background-color: var(--clr-primary-5);
+    border: 5px ridge var(--clr-primary-3);
+    padding: 2%;
+}
+
+.answer-faq {
+    background-color: var(--clr-primary-5);
+    padding: 2%;
+    font-size: var(--medium-font-size);
+}
+
+.bi-caret-down-fill {
+    display: flex;
+    justify-content: flex-end;
+}

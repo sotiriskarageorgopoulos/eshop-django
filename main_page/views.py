@@ -14,6 +14,5 @@ def main_page_view(request):
         contact_us_form.save()
         contact_us_form = ContactUsForm()
     context = dict(searchForm=search_form,contactUsForm=contact_us_form)
-    context["carousel_img"] = ["images/first_carousel.jpg","images/second_carousel.jpg","images/third_carousel.jpg"]
     template_name="main_page.html"
     return render(request,template_name,context)

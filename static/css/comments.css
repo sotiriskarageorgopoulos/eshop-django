@@ -1,0 +1,47 @@
+@import url('./base.css');
+
+.comment-btn {
+    background-color: var(--clr-primary-5);
+    color: var(--clr-grey-10);
+    width: 5%;
+    height: 5vh;
+    border:2px solid var(--clr-primary-5);
+}
+.comment-btn:hover {
+    border-color: var(--clr-primary-4);
+    color: var(--clr-grey-10)
+}
+
+#div_id_date label,
+.dont-display-comment-date-form {
+    display: none;
+}
+
+.comments-field {
+    width: 100%;
+    border:2px solid var(--clr-primary-6);
+    border-radius: var(--radius);
+    color: var(--clr-primary-6);
+    margin-top: 1%;
+}
+
+.comments-field:focus {
+    border: unset;
+    color: var(--clr-primary-6);
+    outline-color:var(--clr-primary-6) ;
+    border:5px solid var(--clr-primary-6);
+}
+
+#div_id_username label,
+#div_id_comment label,
+#div_id_email label
+{
+    font-size: var(--medium-font-size);
+    color: var(--clr-primary-6);
+    padding-top: 1%;
+}
+
+.comments-header {
+    font-size: var(--big-font-size);
+    color: var(--clr-primary-6);
+}
