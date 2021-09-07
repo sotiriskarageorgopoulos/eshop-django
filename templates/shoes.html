@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extrahead %}
+<link href="{% static 'css/shoes.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block content %}
+<div class="container-fluid mt-3 mb-3">
+    <div class="row">
+        <h2 class="filter-heading">{{heading}}</h2>
+        <div class="col-sm-2">
+            <h2 class="filter-heading">Filters</h2>
+            <form method="POST" class="mb-3">
+                {% csrf_token %}
+                <label for="price" class="label-form filter-labels">Price Range (&dollar;)</label>
+                <input type="text" class="form-control" id="price" name="price" disabled />
+                <input type="range" name="slider-price" class="mt-3" min="0" max="{{max_price}}" />
+                <button type="submit" class="btn filters-btn">Search</button>
+            </form>
+            <form method="POST" class="mb-3">
+                {% csrf_token %}
+                <label for="color" class="label-form filter-labels">Color</label>
+                <select id="color" name="color">
+                    {% for c in colors %}
+                    <option value="{{c.0}}">{{c.0}}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn filters-btn mt-3">Search</button>
+            </form>
+            <form method="POST" class="mb-3">
+                {% csrf_token %}
+                <label for="size" class="label-form filter-labels">Sizes</label>
+                <input type="text" class="form-control" id="size" name="size" disabled />
+                <input type="range" name="slider-size" class="mt-3" min="{{min_size}}" max="{{max_size}}" />
+                <button type="submit" class="btn filters-btn">Search</button>
+            </form>
+        </div>
+        <div class="col-sm-8 mt-3">
+            <div class="container-fluid">
+                <div class="row">
+                    {% for s in shoes %} 
+                    <div class="col-sm-4">
+                        <div class="card mb-3">
+                            <a href="{% url path_name s.code %}" target="_blank"><img
+                                    class="card-img-top card-img-style" src="{{ s.image.url }}"
+                                    alt="{{s.brand}}" /></a>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    {{s.brand}}
+                                </h5>
+                                <p class="card-text">Price: &dollar;{{s.price}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+</div>
+{% endblock %}
+{% block extrascripts %}
+<script src="{% static 'js\clothes.js' %}"></script>
+<script src="{% static 'js\shoes.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/cloth.css' %}"/>
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row mt-3 mb-3">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4">
+                <img src="{{cloth.image.url}}" class="img-fluid" alt="{{cloth.brand}} {% if cloth.model != '-' %}{{cloth.model}}{% endif %}" />
+            </div>
+            <div class="col-sm-4">
+                <h2 class="cloth-heading">{{cloth.brand}} {% if cloth.model != '-' %}{{cloth.model}}{% endif %}</h2>
+                <p class="cloth-details-text">Code: {{cloth.code}}</p>
+                <p class="cloth-details-text">{% if cloth.description != '-' %}{{cloth.description}}{% endif %}</p>
+                <h3 class="cloth-heading">Sizes</h3>
+                {% for cd in cloth_details %}
+                    <p class="cloth-details-text">{{cd.size}} {{cd.color}} 
+                        {% if cd.availability %}
+                            <strong class="cloth-available">Available</strong>
+                        {% else %}
+                            <strong class="cloth-unavailable">Unavailable</strong>
+                        {% endif %}
+                    </p>
+                {% endfor %}
+                <p class="cloth-details-text">Price: <strong>&dollar;{{cloth.price}}</strong></p>
+                <p class="cloth-details-text">Shipping Cost: <strong>&dollar;{{cloth.shipping_cost}}</strong></p>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+{% endblock %}
+{% block extrascripts %}
+{% endblock %}

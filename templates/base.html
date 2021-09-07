@@ -34,11 +34,11 @@
                             Categories
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">T-shirts</a></li>
-                            <li><a class="dropdown-item" href="#">Pants</a></li>
-                            <li><a class="dropdown-item" href="#">Jackets</a></li>
-                            <li><a class="dropdown-item" href="#">Jeans</a></li>
-                            <li><a class="dropdown-item" href="#">Shoes</a></li>
+                            <li><a class="dropdown-item" href="{% url 't_shirts' %}">T-shirts</a></li>
+                            <li><a class="dropdown-item" href="{% url 'pants' %}">Pants</a></li>
+                            <li><a class="dropdown-item" href="{% url 'jackets' %}">Jackets</a></li>
+                            <li><a class="dropdown-item" href="{% url 'jeans' %}">Jeans</a></li>
+                            <li><a class="dropdown-item" href="{% url 'shoes' %}">Shoes</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -53,9 +53,7 @@
     </nav>
 
     <body>
-        <div id="show-shopping-cart">
-
-        </div>
+        <div id="show-shopping-cart"></div>
         {% block content %}
         {% endblock %}
     </body>
@@ -64,11 +62,11 @@
             <div class="col-sm-4">
                 <h1 class="d-flex justify-content-center">Categories</h1>
                 <ul class="footer-category-list">
-                    <li><a href="">T-shirts</a></li>
-                    <li><a href="">Pants</a></li>
-                    <li><a href="">Jackets</a></li>
-                    <li><a href="">Jeans</a></li>
-                    <li><a href="">Shoes</a></li>
+                    <li><a href="{% url 't_shirts' %}">T-shirts</a></li>
+                    <li><a href="{% url 'pants' %}">Pants</a></li>
+                    <li><a href="{% url 'jackets' %}">Jackets</a></li>
+                    <li><a href="{% url 'jeans' %}">Jeans</a></li>
+                    <li><a href="{% url 'shoes' %}">Shoes</a></li>
                 </ul>
             </div>
             <div class="col-sm-4">

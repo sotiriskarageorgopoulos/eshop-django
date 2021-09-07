@@ -1,0 +1,24 @@
+@import url('./base.css');
+
+.cloth-details-text {
+    color: var(--clr-primary-5);
+    font-size: var(--medium-font-size);
+}
+
+.cloth-heading {
+    color: var(--clr-primary-6);
+}
+
+.img-fluid {
+    border: 4px solid var(--clr-primary-5);
+    padding: 2%;
+    background-color: var(--clr-white);
+}
+
+.cloth-available {
+    color: var(--clr-green-light)
+}
+
+.cloth-unavailable {
+    color: var(--clr-red-light);
+}

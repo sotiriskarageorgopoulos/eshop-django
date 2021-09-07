@@ -1,0 +1,84 @@
+@import url('./base.css');
+
+.filter-heading {
+    color: var(--clr-primary-6);
+    display: flex;
+    justify-content: center;
+    font-size: var(--x-big-font-size);
+}
+
+.filter-labels {
+    color: var(--clr-primary-6);
+    font-size: var(--medium-font-size);
+}
+
+#price {
+    width: 50%;
+    color: var(--clr-primary-6);
+}
+
+input[name="slider-price"] {
+    -webkit-appearance: none;
+    width: 100%;
+    background-color: var(--clr-primary-5);
+    height: 15px;
+    border-radius: var(--radius);
+}
+
+input[name='slider-price']::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 20px;
+}
+
+input[name='slider-price']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: var(--clr-primary-6);
+    border-radius: 50%;
+    box-shadow: -3px 0 0 3px var(--clr-primary-6);
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    border: 0;
+}
+
+#size,
+#color {
+    width: 100%;
+    padding: 2%;
+    color: var(--clr-primary-6);
+    border: 2px solid var(--clr-primary-6);
+    outline-color: var(--clr-primary-6);
+}
+
+#size:focus,
+#color:focus {
+    border-color: var(--clr-primary-6);
+    outline-color: var(--clr-primary-6);
+}
+
+.filters-btn {
+    color: var(--clr-grey-10);
+    background-color: var(--clr-primary-6);
+}
+
+.filters-btn:hover {
+    color: var(--clr-grey-9);
+}
+
+.card-img-style {
+    width: 100%;
+    height: 70vh;
+    padding: 2%;
+}
+
+.card-img-style:hover {
+    height: 60vh;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.card-text,
+.card-title {
+    color: var(--clr-primary-5);
+}
+

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extrahead %}
+<link href="{% static 'css/shoe.css' %}" type="text/css" rel="stylesheet" />
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row mt-3 mb-3">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <img src="{{shoe.image.url}}" class="img-fluid" alt="{{shoe.brand}}" />
+        </div>
+        <div class="col-sm-4">
+            <h2 class="cloth-heading">{{shoe.brand}}</h2>
+            <p class="cloth-details-text">Code: {{shoe.code}}</p>
+            <p class="cloth-details-text">{% if shoe.description != '-' %}{{shoe.description}}{% endif %}</p>
+            <h3 class="cloth-heading">Sizes</h3>
+            {% for s in shoe_details %}
+                <p class="cloth-details-text">{{s.size_number}} {{s.color}} 
+                    {% if s.availability %}
+                        <strong class="cloth-available">Available</strong>
+                    {% else %}
+                        <strong class="cloth-unavailable">Unavailable</strong>
+                    {% endif %}
+                </p>
+            {% endfor %}
+            <p class="cloth-details-text">Price: <strong>&dollar;{{shoe.price}}</strong></p>
+            <p class="cloth-details-text">Shipping Cost: <strong>&dollar;{{shoe.shipping_cost}}</strong></p>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+{% endblock %}

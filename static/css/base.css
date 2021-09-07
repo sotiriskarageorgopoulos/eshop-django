@@ -188,20 +188,8 @@ footer {
     border: 4px ridge var(--clr-grey-1);
     z-index: 5;
     position: absolute;
-    top: 280px;
-    right: 30px;
-}
-
-.shopping-cart-triangle {
-    width: 0;
-    height: 0;
-    z-index: 5;
-    position: absolute;
-    top: 260px;
-    right: 120px;
-    border: 15px solid transparent;
-    border-top: 0;
-    border-bottom: 30px solid var(--clr-grey-1);
+    top: 31%;
+    right: 2%;
 }
 
 .shopping-cart-details {
