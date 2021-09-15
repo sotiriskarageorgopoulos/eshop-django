@@ -52,23 +52,27 @@
     --xx-big-font-size: 60px;
 }
 
-body{
-    background-color: var(--clr-grey-10);   
+body {
+    background-color: var(--clr-grey-10);
 }
 
 @keyframes change-color {
     0% {
         color: var(--clr-grey-9);
     }
+
     25% {
         color: var(--clr-grey-8)
     }
+
     50% {
         color: var(--clr-grey-7)
     }
+
     75% {
         color: var(--clr-grey-6)
     }
+
     100% {
         color: var(--clr-grey-5);
     }
@@ -105,7 +109,7 @@ body{
 }
 
 .nav-link:hover,
-.navbar-brand:hover { 
+.navbar-brand:hover {
     color: var(--clr-grey-8);
 }
 
@@ -137,7 +141,7 @@ body{
 
 footer {
     background-color: var(--clr-primary-1);
-    color: var(--clr-grey-9);  
+    color: var(--clr-grey-9);
     padding: 4%;
     font-size: var(--big-font-size);
 }
@@ -180,12 +184,18 @@ footer {
     font-size: var(--x-big-font-size);
 }
 
+.img-fluid {
+    border: 4px solid var(--clr-primary-5);
+    padding: 2%;
+    background-color: var(--clr-white);
+}
+
 .shopping-cart {
     background-color: var(--clr-grey-10);
-    color: var(--clr-grey-1);
-    width: 20%;
+    color: var(--clr-primary-6);
+    width: 30%;
     padding: 1%;
-    border: 4px ridge var(--clr-grey-1);
+    border: 4px ridge var(--clr-primary-6);
     z-index: 5;
     position: absolute;
     top: 31%;
@@ -193,5 +203,46 @@ footer {
 }
 
 .shopping-cart-details {
+    font-size: var(--small-font-size);
+    border: 2px solid var(--clr-primary-5);
+    padding: 2%;
+}
+
+.shopping-cart-cost {
     font-size: var(--medium-font-size);
+}
+
+.shopping-cart-brand {
+    font-size: var(--medium-font-size);
+    font-weight: 800;
+}
+
+#shopping-cart:hover {
+    cursor: pointer;
+}
+
+.remove-product-btn,
+.sc-order-btn {
+    background-color: var(--clr-primary-5);
+    color: var(--clr-white);
+    width: 30%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.remove-product-btn:hover,
+.sc-order-btn:hover {
+    opacity: 0.8;
+    color: var(--clr-white);
+}
+
+.remove-product-btn:focus,
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+    box-shadow: 3px 3px 3px 3px var(--clr-primary-7);
+}
+
+.remove-product-btn {
+    width: 70%;
 }

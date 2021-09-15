@@ -9,10 +9,12 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-4">
             <img src="{{shoe.image.url}}" class="img-fluid" alt="{{shoe.brand}}" />
+            <input type="hidden" name="image" value="{{shoe.image.url}}" />
         </div>
-        <div class="col-sm-4">
-            <h2 class="cloth-heading">{{shoe.brand}}</h2>
+        <div class="col-sm-4" id="addErrorMessage">
+            <h2 class="cloth-heading" id="shoeBrand">{{shoe.brand}}</h2>
             <p class="cloth-details-text">Code: {{shoe.code}}</p>
+            <input type="hidden" name="shoe_code" value="{{shoe.code}}" />
             <p class="cloth-details-text">{% if shoe.description != '-' %}{{shoe.description}}{% endif %}</p>
             <h3 class="cloth-heading">Sizes</h3>
             {% for s in shoe_details %}
@@ -22,12 +24,20 @@
                     {% else %}
                         <strong class="cloth-unavailable">Unavailable</strong>
                     {% endif %}
+                    <input type="checkbox" name="size_number" value="{{s.size_number}}" />
+                    <input type="hidden" name="color" value="{{s.color}}" />
                 </p>
             {% endfor %}
             <p class="cloth-details-text">Price: <strong>&dollar;{{shoe.price}}</strong></p>
+            <input type="hidden" name="price" value="{{shoe.price}}" />
             <p class="cloth-details-text">Shipping Cost: <strong>&dollar;{{shoe.shipping_cost}}</strong></p>
+            <input type="hidden" name="shipping_cost" value="{{shoe.shipping_cost}}" />
+            <button class="btn add-cart-btn"><i class="bi bi-cart4"></i> Add to cart</button>
         </div>
         <div class="col-sm-2"></div>
     </div>
 </div>
+{% endblock %}
+{% block extrascripts %}
+<script src="{% static 'js/shoe.js' %}"></script>
 {% endblock %}

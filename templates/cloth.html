@@ -1,35 +1,46 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block extrahead %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/cloth.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/cloth.css' %}" />
 {% endblock %}
 {% block content %}
-    <div class="container-fluid">
-        <div class="row mt-3 mb-3">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
-                <img src="{{cloth.image.url}}" class="img-fluid" alt="{{cloth.brand}} {% if cloth.model != '-' %}{{cloth.model}}{% endif %}" />
-            </div>
-            <div class="col-sm-4">
-                <h2 class="cloth-heading">{{cloth.brand}} {% if cloth.model != '-' %}{{cloth.model}}{% endif %}</h2>
-                <p class="cloth-details-text">Code: {{cloth.code}}</p>
-                <p class="cloth-details-text">{% if cloth.description != '-' %}{{cloth.description}}{% endif %}</p>
-                <h3 class="cloth-heading">Sizes</h3>
-                {% for cd in cloth_details %}
-                    <p class="cloth-details-text">{{cd.size}} {{cd.color}} 
-                        {% if cd.availability %}
-                            <strong class="cloth-available">Available</strong>
-                        {% else %}
-                            <strong class="cloth-unavailable">Unavailable</strong>
-                        {% endif %}
-                    </p>
-                {% endfor %}
-                <p class="cloth-details-text">Price: <strong>&dollar;{{cloth.price}}</strong></p>
-                <p class="cloth-details-text">Shipping Cost: <strong>&dollar;{{cloth.shipping_cost}}</strong></p>
-            </div>
-            <div class="col-sm-2"></div>
+<div class="container-fluid">
+    <div class="row mt-3 mb-3">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <img src="{{cloth.image.url}}" class="img-fluid"
+                alt="{{cloth.brand}} {% if cloth.model != '-' %}{{cloth.model}}{% endif %}" />
+            <input type="hidden" name="cloth_img" value="{{cloth.image.url}}"/>
         </div>
+        <div class="col-sm-4" id="addErrorMessage">
+            <h2 class="cloth-heading" id="clothBrand">{{cloth.brand}} {% if cloth.model != '-' %}{{cloth.model}}{% endif %}</h2>
+            <p class="cloth-details-text">Code: {{cloth.code}}</p>
+            <input type="hidden" name="cloth_code" value="{{cloth.code}}" />
+            <p class="cloth-details-text">{% if cloth.description != '-' %}{{cloth.description}}{% endif %}</p>
+            <h3 class="cloth-heading">Sizes</h3>
+            {% for cd in cloth_details %}
+            <p class="cloth-details-text">{{cd.size}} {{cd.color}}
+                {% if cd.availability %}
+                <strong class="cloth-available">Available</strong>
+                <input type="checkbox" name="{{cd.size}}" value="{{cd.size}}" />
+                <input type="hidden" name="color" value="{{cd.color}}" />
+                {% else %}
+                <strong class="cloth-unavailable">Unavailable</strong>
+                {% endif %}
+            </p>
+            {% endfor %}
+            <p class="cloth-details-text">Price: <strong>&dollar;{{cloth.price}}</strong><input type="hidden"
+                    name="price" value="{{cloth.price}}" /></p>
+            <p class="cloth-details-text">Shipping Cost: <strong>&dollar;{{cloth.shipping_cost}}</strong><input
+                    type="hidden" name="shipping_cost" value="{{cloth.shipping_cost}}" /></p>
+            <p class="cloth-details-text">Pieces: <input type="number" class="cloth-pieces-input" name="pieces" min="1"
+                    value="1" /></p>
+            <button class="btn add-cart-btn"><i class="bi bi-cart4"></i> Add to cart</button>
+        </div>
+        <div class="col-sm-2"></div>
     </div>
+</div>
 {% endblock %}
 {% block extrascripts %}
+<script src="{% static 'js/cloth.js' %}"></script>
 {% endblock %}
