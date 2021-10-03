@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/order.css' %}" />
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <h2 class="order-heading mb-3 mt-3">Your order details</h2>
+    <div class="row">
+        <div class="col-sm-4" id="costBox"></div>
+        <div class="col-sm-4">
+            <div id="success_message"></div>
+            <form method="POST" class="order-box mb-3 mt-3">
+                {% csrf_token %}
+                <h2 class="order-heading">Your personal info</h2>
+                <label class="label-form" for="name">Name</label>
+                <input type="text" name="name" id="name" class="form-control order-form-input"
+                    value="{% if person.name %}{{person.name}}{% endif %}" />
+                <label class="label-form" for="surname">Surname</label>
+                <input type="text" name="surname" id="surname" class="form-control order-form-input"
+                    value="{% if person.surname %}{{person.surname}}{% endif %}" />
+                <label class="label-form" for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control order-form-input"
+                    value="{% if person.email %}{{person.email}}{% endif %}" />
+                <label class="label-form" for="tel">Phone Number</label>
+                <input type="tel" name="tel" id="tel" class="form-control order-form-input"
+                    value="{% if person.tel %}{{person.tel}}{% endif %}" />
+                <label class="label-form" for="street">Street</label>
+                <input type="text" id="street" name="street" class="form-control order-form-input"
+                    value="{% if person.street %}{{person.street}}{% endif %}" />
+                <label class="label-form" for="city">City</label>
+                <input type="text" name="city" id="city" class="form-control order-form-input"
+                    value="{% if person.city %}{{person.city}}{% endif %}" />
+                <label class="label-form" for="province">Province</label>
+                <input type="text" name="province" id="province" class="form-control order-form-input"
+                    value="{% if person.province %}{{person.province}}{% endif %}" />
+                <label class="label-form" for="postal_code">Postal Code</label>
+                <input type="text" name="postal_code" id="postal_code" class="form-control order-form-input"
+                    value="{% if person.postal_code %}{{person.postal_code}}{% endif %}" />
+                <label class="label-form" for="payment_method">Payment Method</label>
+                <select name="payment_method" id="payment_method" class="order-form-select">
+                    <option>Select option...</option>
+                    <option value="credit_card">Credit Card</option>
+                    <option value="cash">Cash</option>
+                </select>
+                <div id="hiddenInputsCode"></div>
+                <div id="hiddenInputsCC"></div>
+                <div class="text-center mb-3 mt-3">
+                    <button class="btn order-btn" id="order_btn">Order</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <ul class="list-group order-box mt-3 mb-3" id="productList">
+                <h2 class="order-heading">Your selected items</h2>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block extrascripts %}
+<script src="{% static 'js/order.js' %}"></script>
+{% endblock %}

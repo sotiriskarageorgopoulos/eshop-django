@@ -43,7 +43,10 @@ INSTALLED_APPS = [
     'main_page',
     'faq',
     'comments',
-    'clothes'
+    'clothes',
+    'login',
+    'register',
+    'order'
 ]
 
 MIDDLEWARE = [

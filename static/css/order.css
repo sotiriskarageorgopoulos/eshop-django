@@ -1,0 +1,53 @@
+@import url('./base.css');
+
+.order-heading {
+    display: flex;
+    justify-content: center;
+    color: var(--clr-primary-7);
+}
+
+.order-box {
+    background-color: var(--clr-primary-3);
+    color: var(--clr-primary-7);
+    padding: 2%;
+}
+
+.order-form-input {
+    padding: 1%;
+    border:2px solid var(--clr-primary-6);
+    border-radius: var(--radius);
+    color: var(--clr-primary-7);
+    margin-top: 1%;
+}
+
+.order-form-input:focus {
+    border: unset;
+    color: var(--clr-primary-7);
+    outline-color:var(--clr-primary-6) ;
+    border:5px solid var(--clr-primary-6);
+}
+
+.order-btn {
+    color: var(--clr-primary-3);
+    background-color: var(--clr-primary-7);
+    font-weight: 800;
+    width: 80%;
+}
+
+.order-btn:hover {
+    opacity: 0.8;
+}
+
+.order-cost-info {
+    font-weight: 800;
+    font-size: var(--medium-font-size);
+}
+
+.order-form-select {
+    width: 100%;
+    color: var(--clr-primary-7);
+    padding: 1%;
+    border:2px solid var(--clr-primary-6);
+    border-radius: var(--radius);
+}
+

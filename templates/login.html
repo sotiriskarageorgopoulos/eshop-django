@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block extrahead %}
+<link href="{% static 'css/login.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block content %}
+<div class="container-fluid mt-5 mb-5">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <form method="POST" class="login-form">
+                {% csrf_token %}
+                <p class="login-header">LOGIN</p>
+                <label class="label-form" id="email">Email</label>
+                <input type="email" name="email" class="form-control mb-3" />
+                <label class="label-form" id="password">Password</label>
+                <input type="password" name="password" class="form-control mb-3" />
+                <p>If you have not an account, you can create it! <a href="{% url 'register' %}" class="register-link">Register</a></p>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-light mb-3 btn-login">Login</button>
+                </div>
+                {% if error_text %}
+                <p class="error-text">{{error_text}}</p>
+                {% endif %}
+            </form>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+{% endblock %}
+{% block extrascripts %}
+{% endblock %}

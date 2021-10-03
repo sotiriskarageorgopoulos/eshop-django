@@ -1,0 +1,62 @@
+@import url('./base.css');
+
+.register-form,
+.login-form {
+    background-color: var(--clr-primary-6);
+    color: var(--clr-white);
+    padding: 2%;
+}
+
+.register-header,
+.login-header {
+    font-size: var(--big-font-size);
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-register,
+.btn-login {
+    color: var(--clr-primary-6);
+    width: 80%;
+}
+
+.btn-register:hover,
+.btn-login:hover {
+    color: var(--clr-primary-6);
+    opacity: 0.9;
+}
+
+.login-link,
+.register-link {
+    color: var(--clr-white);
+}
+
+.login-link:hover,
+.register-link:hover {
+    color: var(--clr-white);
+    opacity: 0.8;
+}
+
+.error-text {
+    color: var(--clr-red-dark);
+    border: 2px solid var(--clr-red-dark);
+    background-color: var(--clr-white);
+    padding: 2%;
+}
+
+.register-form-fields {
+    width: 100%;
+    padding: 1%;
+    border: 2px solid var(--clr-primary-6);
+    border-radius: var(--radius);
+    color: var(--clr-primary-6);
+    margin-top: 1%;
+}
+
+.register-form-fields:focus {
+    border: unset;
+    color: var(--clr-primary-6);
+    outline-color: var(--clr-primary-6);
+    border: 5px solid var(--clr-primary-6);
+}

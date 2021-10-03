@@ -60,14 +60,27 @@ $(document).ready(function () {
 function calculateTotalCost() {
     let clothes = JSON.parse(localStorage.getItem('clothes'))
     let totalCost = 0
-    clothes.map(c => totalCost += Number(c.pieces) * Number(c.price) + Number(c.shippingCost))
-    localStorage.setItem('totalCost', totalCost)
-}
+    let realCost = 0
+    let shippingCost = 0
+    clothes.map(c => {
+        if(c.pieces !== undefined) {
+            realCost += Number(c.pieces) * Number(c.price)
+            shippingCost = Number(c.shippingCost)
+        }
+        else {
+            realCost += Number(c.price)
+            shippingCost = Number(c.shippingCost)
+        }
+    })
 
-function removeProduct(code) {
-    let clothes = JSON.parse(localStorage.getItem('clothes'))
-    clothes = clothes.filter(c => c.code !== code)
-    localStorage.setItem('clothes', JSON.stringify(clothes))
-    calculateTotalCost()
-    setTimeout(() => location.reload(), 1000)
+    if(realCost > 50) {
+        totalCost = realCost
+        shippingCost = 0
+    }
+    else {
+        totalCost = realCost + shippingCost
+    }
+
+    localStorage.setItem('totalCost', totalCost)
+    localStorage.setItem('shippingCost', shippingCost)
 }

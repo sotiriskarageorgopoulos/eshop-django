@@ -25,7 +25,10 @@ urlpatterns = [
     path('', include('main_page.urls')),
     path('faq/',include('faq.urls')),
     path('comments/',include('comments.urls')),
-    path('clothes/',include('clothes.urls')),  
+    path('clothes/',include('clothes.urls')),
+    path('login/',include('login.urls')),
+    path('register/',include('register.urls')),
+    path('order/',include('order.urls'))
 ]
 
 if settings.DEBUG:
