@@ -1,21 +1,21 @@
 @import url('./base.css');
 
-#id_search{
+#id_search {
     width: 100%;
     height: 5vh;
     font-size: var(--medium-font-size);
     padding: 1%;
     padding-top: 2%;
     padding-bottom: 2%;
-    border:2px solid var(--clr-primary-6);
+    border: 2px solid var(--clr-primary-6);
     border-radius: var(--radius);
 }
 
 #id_search:focus {
     border: unset;
     color: var(--clr-primary-6);
-    outline-color:var(--clr-primary-6) ;
-    border:4px solid var(--clr-primary-6);
+    outline-color: var(--clr-primary-6);
+    border: 4px solid var(--clr-primary-6);
 }
 
 .search-btn {
@@ -37,7 +37,7 @@
     font-size: var(--xx-big-font-size);
 }
 
-.search-btn:hover{
+.search-btn:hover {
     color: var(--clr-grey-9);
     background-color: var(--clr-primary-7);
 }
@@ -70,13 +70,13 @@
     font-size: var(--medium-font-size);
     color: var(--clr-primary-6);
     display: flex;
-    justify-content:center;
+    justify-content: center;
     text-decoration: none;
 }
 
 .headquarters-info:hover {
     color: var(--clr-primary-6);
-} 
+}
 
 .contact-us-form {
     background-color: var(--clr-primary-6);
@@ -90,7 +90,7 @@
 .contact-us-field {
     width: 100%;
     padding: 1%;
-    border:2px solid var(--clr-primary-6);
+    border: 2px solid var(--clr-primary-6);
     border-radius: var(--radius);
     color: var(--clr-primary-6);
     margin-top: 1%;
@@ -100,14 +100,14 @@
 .contact-us-field:focus {
     border: unset;
     color: var(--clr-primary-6);
-    outline-color:var(--clr-primary-6) ;
-    border:5px solid var(--clr-primary-6);
+    outline-color: var(--clr-primary-6);
+    border: 5px solid var(--clr-primary-6);
 }
 
 .contact-us-message {
     width: 100%;
     padding: 1%;
-    border:2px solid var(--clr-primary-6);
+    border: 2px solid var(--clr-primary-6);
     border-radius: var(--radius);
     margin-top: 1%;
     color: var(--clr-primary-6);
@@ -128,7 +128,27 @@
 #div_id_surname label,
 #div_id_email label,
 #div_id_subject label,
-#div_id_message label
-{
+#div_id_message label {
     font-size: var(--medium-font-size);
+}
+
+@media only screen and (max-width:1025px) {
+    .carousel-img {
+        height: 60vh;
+    }
+}
+
+@media only screen and (max-width:769px) {
+    .search-btn {
+        font-size: var(--medium-font-size);
+    }
+
+    .eshop-heading {
+        font-size: var(--x-big-font-size);
+    }
+
+    .contact-us-heading,
+    .headquarters-heading {
+        font-size: var(--big-font-size);
+    }
 }
